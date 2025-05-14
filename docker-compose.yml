@@ -1,0 +1,13 @@
+services:
+  ioc:
+    image: ghcr.io/cnpem/motorpaker
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+      target: dynamic-link
+      labels:
+        org.opencontainers.image.source: https://github.com/cnpem/motorPaker
+      args:
+        REPONAME: motorParker
+        RUNDIR: /opt/motorParker/iocs/parkerIOC/iocBoot/iocParker
+        BUILD_STAGE_VERSION: latest
